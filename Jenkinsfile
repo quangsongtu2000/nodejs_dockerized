@@ -19,5 +19,11 @@ pipeline{
         sh 'npm run build'
       }
     }
+
+    stage("Build Images"){
+      steps{
+        sh 'docker build -t my-apps .'
+      }
+    }
   }
 }
